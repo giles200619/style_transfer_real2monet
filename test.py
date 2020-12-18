@@ -15,6 +15,8 @@ from models.monet_model import StyleTransfer
 
 if __name__ == '__main__':
     opt = TestOptions().parse()
+    if not os.path.isdir(opt.results_dir):
+        os.mkdir(opt.results_dir)
     
     test_dataset = MonetDataset(opt.data_dir,train=False)
     test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=False)

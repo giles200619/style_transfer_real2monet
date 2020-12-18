@@ -18,18 +18,20 @@ class MonetDataset(Dataset):
     def __init__(self, path, train=True):
         self.train = train
         if train:
-            assert(os.path.isdir(os.path.join(path,'trainA')))
-            assert(os.path.isdir(os.path.join(path,'trainB')))
+            assert os.path.isdir(os.path.join(path,'trainA')),'cannot find trainA in data folder'
+            assert os.path.isdir(os.path.join(path,'trainB')),'cannot find trainB in data folder'
             self.path_A = os.path.join(path,'trainA')
             self.path_B = os.path.join(path,'trainB')
         else:
-            assert(os.path.isdir(os.path.join(path,'testA')))
-            assert(os.path.isdir(os.path.join(path,'testB')))
+            assert os.path.isdir(os.path.join(path,'testA')),'cannot find testA in data folder' 
+            assert os.path.isdir(os.path.join(path,'testB')),'cannot find testB in data folder' 
             self.path_A = os.path.join(path,'testA')
             self.path_B = os.path.join(path,'testB')
             
         self.data_list_A = os.listdir(self.path_A)
         self.data_list_B = os.listdir(self.path_B)
+        assert len(self.data_list_A)!=0, 'cannot find image file for dataset A'
+        assert len(self.data_list_A)!=0, 'cannot find image file for dataset B'
             
         self.length = len(self.data_list_A)
         self.length_B = len(self.data_list_B)

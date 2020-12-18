@@ -2,6 +2,7 @@
 """
 
 """
+import os
 import matplotlib.pyplot as plt
 from torch.utils.data.dataloader import DataLoader
 from torch.utils.tensorboard import SummaryWriter
@@ -13,9 +14,16 @@ from models.monet_model import StyleTransfer
 if __name__ == '__main__':
     opt = TrainOptions().parse()
     
+    #set up folders:
+    if not os.path.isdir(opt.checkpoints_dir):
+        os.mkdir(opt.checkpoints_dir)
+    if not os.path.isdir(opt.train_result_dir):
+        os.mkdir(opt.train_result_dir)
+        
+    #dataloader
     train_dataset = MonetDataset(opt.data_dir,train=True)
     train_dataloader = DataLoader(train_dataset, batch_size=opt.batch_size, shuffle=True)
-    
+    #model
     model = StyleTransfer(opt)
     if opt.continue_train:
         opt.start_epoch = model.load(opt.load_epoch,opt.checkpoints_dir)
