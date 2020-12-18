@@ -1,11 +1,17 @@
 # style_transfer_real2monet
-
-
-![Architecture](/image/architecture.PNG)
 |Real|Real2Monet |Monet|
 | --- | --- | --- |
-|![](/image/1_predict.png)|![](/image/1_predict.png) |![](/image/2_predict.png)|
-|![](/image/1_predict.png)|![](/image/1_predict.png) |![](/image/2_predict.png)|
+|<img src="/images/10_A.png" width="150" />|<img src="/images/10_A2B.png" width="150" /> |<img src="/images/10_B.png" width="150" />|
+|<img src="/images/21_A.png" width="150" />|<img src="/images/21_A2B.png" width="150" /> |<img src="/images/21_B.png" width="150" />|
+|<img src="/images/32_A.png" width="150" />|<img src="/images/32_A2B.png" width="150" /> |<img src="/images/32_B.png" width="150" />|
+
+Network architecture       |  Generator architecture
+:-------------------------:|:-------------------------:
+<img src="/images/network.PNG" width="250"> |  <img src="/images/generator.PNG" width="250">
+
+Up Block for combining features and upsample      |  Down Block for style/content encoding
+:-------------------------:|:-------------------------:
+<img src="/images/upblock.PNG" width="200"> |  <img src="/images/upblock.PNG" width="200">
 
 ### Key Features:
 
