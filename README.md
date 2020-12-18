@@ -2,9 +2,10 @@
 
 
 ![Architecture](/image/architecture.PNG)
-|Target|![](/image/1_target.png) |![](/image/2_target.png)|![](/image/3_target.png) 
-|:---:|:---:|:---:|:---:|
-|Predict|![](/image/1_predict.png) |![](/image/2_predict.png)|![](/image/3_predict.png) 
+|Real|Real2Monet |Monet|
+| --- | --- | --- |
+|![](/image/1_predict.png)|![](/image/1_predict.png) |![](/image/2_predict.png)|
+|![](/image/1_predict.png)|![](/image/1_predict.png) |![](/image/2_predict.png)|
 
 ### Key Features:
 
