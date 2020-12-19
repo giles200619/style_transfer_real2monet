@@ -1,5 +1,5 @@
 # style_transfer_real2monet
-|Real|Real2Monet |Monet|
+|Real|Real to Monet |Monet|
 | --- | --- | --- |
 |<img src="/images/10_A.png" width="150" />|<img src="/images/10_A2B.png" width="150" /> |<img src="/images/10_B.png" width="150" />|
 |<img src="/images/21_A.png" width="150" />|<img src="/images/21_A2B.png" width="150" /> |<img src="/images/21_B.png" width="150" />|
@@ -23,14 +23,26 @@ Up Block for combining features and upsample      |  Down Block for style/conten
 * torchvision 0.6.1 
 
 ## Data
-The data is based on the Shapenet dataset naming convention: {model name}\_{azimuth/10}\_{elevation}.png
+To train A to B
+```bash
+└── data
+    ├── trainA
+    ├── tranB
+    ├── testA
+    └── testB
+```
 
 ### Train
 ```
-python train.py --data_dir [/folder/to/training/dataset] 
+python train.py --data_dir [/folder/to/training/dataset] --batch_size [] 
 ```
+To continue training:
+```
+python train.py --data_dir [/folder/to/training/dataset] --batch_size [] --continue_train
+```
+Please check options, train_options for more options.
 ### Test
-Pre-trained weight is provided: [real2monet](https://drive.google.com/file/d/1NHuOwIuEBvyPFQdGyG0ZFm5gfMvhIZuC/view?usp=sharing)
+The provided pre-trained [weight](https://drive.google.com/file/d/1NHuOwIuEBvyPFQdGyG0ZFm5gfMvhIZuC/view?usp=sharing) is trained on this [dataset](https://www.kaggle.com/c/gan-getting-started/data).
 ```
 python test.py --data_dir [/folder/to/testing/dataset] --checkpoints_dir [] 
 ```
