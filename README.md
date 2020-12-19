@@ -1,5 +1,5 @@
 # style_transfer_real2monet
-A style transferring network that is conditioning on both the input content and style images.
+A style transferring network that is conditioning on both the input content and style images. No cycle-consistency constraint is needed for training.
 |Real|Real to Monet |Monet|
 | --- | --- | --- |
 |<img src="/images/10_A.png" width="150" />|<img src="/images/10_A2B.png" width="150" /> |<img src="/images/10_B.png" width="150" />|
@@ -21,6 +21,7 @@ Up Block for combining features and upsample      |  Down Block for style/conten
 * The score is set to 0 for the real image and 1 for the fake image when training the generator.
 * The score is set to 0.1 for the real image and 0.9 for the fake image when training the discriminator with gan_mode = original.
 * Gaussian noise is added to the image before passing into the discriminator.
+* Both real and fake images are passed into the patch discriminator simultaneously.
 * Content Loss is the MSE loss of the features extracted from one pre-trained VGG19 layer.
 * Style Loss is the MSE loss between the features' Gram Matrix from several VGG19 layers.
 
@@ -71,3 +72,4 @@ python test.py --data_dir [/folder/to/testing/dataset] --checkpoints_dir []
 * Structure and part of the network code from: [CORN](https://github.com/nicolaihaeni/corn)
 * [AdaIN implementation](https://github.com/naoto0804/pytorch-AdaIN)
 * The design of the generator is inspired by [TSIT](https://arxiv.org/abs/2007.12072)
+* Content loss and style loss are inspired by the [Pytorch Tutorials](https://pytorch.org/tutorials/advanced/neural_style_tutorial.html)
