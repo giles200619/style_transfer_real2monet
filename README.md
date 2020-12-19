@@ -50,7 +50,7 @@ python train.py --data_dir [/folder/to/training/dataset] --batch_size [] --conti
 ```
 Please check options, train_options for more options.
 ### Test
-The provided pre-trained [weight](https://drive.google.com/file/d/1NHuOwIuEBvyPFQdGyG0ZFm5gfMvhIZuC/view?usp=sharing) is trained on this [dataset](https://www.kaggle.com/c/gan-getting-started/data).
+The provided pre-trained [weight](https://drive.google.com/drive/folders/1uJy9VX7pSG-XPSI0RXZqbZENWYoAXvYF?usp=sharing) is trained on this [dataset](https://www.kaggle.com/c/gan-getting-started/data).
 ```
 python test.py --data_dir [/folder/to/testing/dataset] --checkpoints_dir [] 
 ```
