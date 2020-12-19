@@ -8,7 +8,7 @@ A style transferring network that is conditioning on both the input content and 
 
 Network architecture       |  Generator architecture
 :-------------------------:|:-------------------------:
-<img src="/images/network.PNG" width="250"> |  <img src="/images/generator.PNG" width="250">
+<img src="/images/network.PNG" width="340"> |  <img src="/images/generator.PNG" width="340">
 
 Up Block for combining features and upsample      |  Down Block for style/content encoding
 :-------------------------:|:-------------------------:
