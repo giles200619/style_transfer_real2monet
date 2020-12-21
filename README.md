@@ -35,7 +35,7 @@ To train A to B
 ```bash
 └── data
     ├── trainA
-    ├── tranB
+    ├── trainB
     ├── testA
     └── testB
 ```
